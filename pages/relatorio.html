@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorios</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="body">
+    
+    <div class="layout-principal">
+        
+        <!--menu lateral-->
+        <div class="menu-lateral">
+            <div class="logotipo">
+                <span class="logo-texto">Ponto ID</span>
+            </div>
+            <div class="perfil-usuario">
+                <img src="https://placehold.co/40x40/4a8ff5/ffffff?text=G" alt="Foto de Perfil" class="foto-perfil">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Olá, Gustavo</span>
+                    <span class="cargo-usuario">Administrador</span>
+                </div>
+                <a href="config.html" class="config-btn" aria-label="Configurações">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <!--links-->
+                    <li class="nav-item"><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="./ponto.html"><i class="fas fa-clock"></i> Bater Ponto</a></li>
+                    <li class="nav-item"><a href="./meuponto.html"><i class="fas fa-file-alt"></i> Meu Ponto</a></li>
+                    <li class="nav-item ativo-relatorio"><a href="./relatorio.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li> <!--item ativo-->
+                    <li class="nav-item"><a href="./config.html"><i class="fas fa-cog"></i>Configurações</a></li>
+                    <li class="nav-item logout"><a href="#" id="LinkSaida"><i class="fas fa-sign-out-alt"></i> Sair</a></li> <!--LinkSaida JS-->
+                </ul>
+            </nav>
+        </div>
+        
+        <!--conteudo principal-->
+        <div class="conteudo-principal">
+            <h1>Relatório de Ponto por Colaborador</h1>
+
+            <!--buscar colaborador-->
+            <div class="secao-filtros">
+                <div class="grupo-filtro">
+                    <label for="seletor-colaborador">Selecione o Colaborador:</label>
+                    <select id="seletor-colaborador">
+                        <option value="">-- Selecione um Funcionário --</option>
+                        <option value="1">Ana Lima (Desenvolvedora)</option>
+                        <option value="2">Bruno Costa (Marketing)</option>
+                        <option value="3">Carla Nunes (Financeiro)</option>
+                    </select>
+                </div>
+                
+                <div class="grupo-filtro">
+                    <button class="buscar-btn" onclick="buscarDadosColaborador()">
+                        <i class="fas fa-search"></i> Buscar Ponto
+                    </button>
+                </div>
+            </div>
+
+            <!--detalhes colaborador-->
+            <div id="detalhesColaborador">
+                <div class="colaborador-info-card">
+                    <div class="info-grupo">
+                        <span class="info-nome-colaborador">Colaborador:</span>
+                        <span class="info-valor" id="nomeColaborador">Nome do Colaborador</span>
+                    </div>
+                    <div class="info-grupo">
+                        <span class="info-nome-colaborador">Função:</span>
+                        <span class="info-valor" id="funcaoColaborador">Função</span>
+                    </div>
+                </div>
+                
+                <!--tabela de registro de ponto-->
+                <div class="secao-registro-ponto">
+                    <h2>Registros de Ponto da Semana</h2>
+                    
+                    <table class="tabela-ponto">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Dia</th>
+                                <th>E. Prevista</th>
+                                <th>S. Prevista</th>
+                                <th>E. Real 1</th>
+                                <th>S. Real 1</th>
+                                <th>E. Real 2</th>
+                                <th>S. Real 2</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoTabelaPonto">
+                            <tr><td colspan="9">Selecione um funcionário e clique em Buscar.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+           <!--modal de saida-->
+    <div id="ModalSaida" class="modal">
+        <div class="modal-content-confirm">
+            <h3><i class="fas fa-exclamation-triangle"></i> Confirmar Saída</h3>
+            <p>Tem certeza de que deseja sair do sistema Ponto ID?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="fecharModalSaida()">Cancelar</button>
+                <button class="btn-confirm" onclick="confirmarSaida()">Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>

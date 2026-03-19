@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Ponto</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+   
+    <div class="layout-principal">
+        
+        <!--menu lateral-->
+        <div class="menu-lateral">
+            <div class="logotipo">
+                <span class="logo-texto">Ponto ID</span>
+            </div>
+            <div class="perfil-usuario">
+                <img src="https://placehold.co/40x40/4a8ff5/ffffff?text=G" alt="Foto de Perfil" class="foto-perfil">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Olá, Gustavo</span>
+                    <span class="cargo-usuario">Administrador</span>
+                </div>
+                <a href="config.html" class="config-btn" aria-label="Configurações">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <!--links-->
+                    <li class="nav-item"><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="./ponto.html"><i class="fas fa-clock"></i> Bater Ponto</a></li>
+                    <li class="nav-item ativo-meuponto"><a href="./meuponto.html"><i class="fas fa-file-alt"></i> Meu Ponto</a></li> <!--item ativo-->
+                    <li class="nav-item"><a href="./relatorio.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+                    <li class="nav-item"><a href="./config.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li class="nav-item logout"><a href="#" id="LinkSaida"><i class="fas fa-sign-out-alt"></i> Sair</a></li> <!--LinkSaida JS-->
+                </ul>
+            </nav>
+        </div>
+        
+        <!--conteudo principal-->
+        <div class="conteudo-principal">
+            <h1>Meu Ponto</h1>
+            
+            <!--cards saldo de horas-->
+            <div class="saldo-cards">
+                <div class="info-card neutro">
+                    <div class="titulo">Banco de Horas (Saldo)</div>
+                    <div class="saldo" id="bankBalance">00:00</div>
+                </div>
+                <div class="info-card positivo">
+                    <div class="titulo">Horas Extras Acumuladas</div>
+                    <div class="saldo" id="extraHours">08:30</div>
+                </div>
+                <div class="info-card negativo">
+                    <div class="titulo">Faltas/Atrasos (Mês)</div>
+                    <div class="saldo" id="absences">01:15</div>
+                </div>
+                <div class="info-card neutro">
+                    <div class="titulo">Dias Trabalhados (Mês)</div>
+                    <div class="saldo" id="daysWorked">15 / 22</div>
+                </div>
+            </div>
+
+            <!--tabela ponto-->
+            <div class="secao-registro-ponto">
+                <div class="titulo-tabela">
+                    <h2>Espelho de Ponto: <span id="#">Setembro/2025</span></h2>
+                    <div>
+                        <select id="#" class="filtro-periodo">
+                            <option value="setembro">Setembro/2025</option>
+                            <option value="agosto">Agosto/2025</option>
+                        </select>
+                        <button class="ajuste-btn" onclick="abrirModalAjuste()">
+                            <i class="fas fa-wrench"></i> Solicitar Ajuste
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="cabecalho-tabela">
+                    <table class="tabela-ponto">
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Status</th>
+                                <th>E. Prevista</th>
+                                <th>Marcações (Real)</th>
+                                <th>Tempo Total</th>
+                                <th>Ajuste Solicitado?</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoTabela"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!--modal de ajuste-->
+    <div id="modalAjuste" class="modal">
+        <div class="conteudo-modal">
+            <span class="fechar-btn" onclick="fecharModalAjuste()">&times;</span>
+            <h3>Solicitar Ajuste ou Justificativa</h3>
+
+            <form id="formAjuste">
+                <div class="form-grupo">
+                    <label for="dataAjuste">Data do Ajuste:</label>
+                    <input type="date" id="dataAjuste" required>
+                </div>
+                
+                <div class="form-grupo">
+                    <label for="tipoAjuste">Tipo de Solicitação:</label>
+                    <select id="tipoAjuste" required>
+                        <option value="">-- Selecione --</option>
+                        <option value="falta_marcação">Falta de Marcação (Esqueci)</option>
+                        <option value="ajuste_horario">Ajuste de Horário (Erro)</option>
+                        <option value="justificativa">Justificativa Médica/Atestado</option>
+                    </select>
+                </div>
+                
+                <div class="form-grupo">
+                    <label for="adjustmentTime">Marcação Real (Hora e Minuto):</label>
+                    <input type="time" id="adjustmentTime">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="motivoAjuste">Motivo / Detalhes (Obrigatório):</label>
+                    <textarea id="motivoAjuste" rows="4" required placeholder="Descreva o motivo da sua solicitação..."></textarea>
+                </div>
+                
+                <button type="submit" class="enviar-modal-btn">Enviar Solicitação</button>
+            </form>
+        </div>
+    </div>
+
+            <!--modal de saida-->
+    <div id="ModalSaida" class="modal">
+        <div class="modal-content-confirm">
+            <h3><i class="fas fa-exclamation-triangle"></i> Confirmar Saída</h3>
+            <p>Tem certeza de que deseja sair do sistema Ponto ID?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="fecharModalSaida()">Cancelar</button>
+                <button class="btn-confirm" onclick="confirmarSaida()">Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>

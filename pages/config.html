@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="body">
+    <div class="layout-principal">
+        
+        <!--menu lateral-->
+        <div class="menu-lateral">
+            <div class="logotipo">
+                <span class="logo-texto">Ponto ID</span>
+            </div>
+            <div class="perfil-usuario">
+                <img src="https://placehold.co/40x40/4a8ff5/ffffff?text=G" alt="Foto de Perfil" class="foto-perfil">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Olá, Gustavo</span>
+                    <span class="cargo-usuario">Administrador</span>
+                </div>
+                <a href="config.html" class="config-btn" aria-label="Configurações">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <!--Links-->
+                    <li class="nav-item"><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="./ponto.html"><i class="fas fa-clock"></i> Bater Ponto</a></li>
+                    <li class="nav-item"><a href="./meuponto.html"><i class="fas fa-file-alt"></i> Meu Ponto</a></li>
+                    <li class="nav-item"><a href="./relatorio.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+                    <li class="nav-item ativo-config"><a href="./config.html"><i class="fas fa-cog"></i> Configurações</a></li> <!--item ativo-->
+                    <li class="nav-item logout"><a href="#" id="LinkSaida"><i class="fas fa-sign-out-alt"></i> Sair</a></li> <!--LinkSaida JS-->
+                </ul>
+            </nav>
+        </div>
+        
+        <!--Conteudo Pricipal-->
+        <div class="conteudo-principal">
+            <h1>Configurações do Usuário</h1>
+
+            <div class="config-area">
+
+                <!--Configurações de perfil-->
+                <div class="config-card">
+                    <h2><i class="fas fa-user-circle"></i> Meu Perfil</h2>
+                    <form id="perfilForm">
+                        <div class="form-grupo">
+                            <label for="fullName">Nome Completo</label>
+                            <input type="text" id="#" value="Gustavo Andrade" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="userEmail">E-mail</label>
+                            <input type="email" id="#" value="adm01@gmail.com" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="userRole">Função</label>
+                            <input type="text" id="#" value="Gerente" disabled>
+                        </div>
+                        <button type="submit" class="salvar-btn">Salvar Perfil</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--modal de saida-->
+    <div id="ModalSaida" class="modal">
+        <div class="modal-content-confirm">
+            <h3><i class="fas fa-exclamation-triangle"></i> Confirmar Saída</h3>
+            <p>Tem certeza de que deseja sair do sistema Ponto ID?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="fecharModalSaida()">Cancelar</button>
+                <button class="btn-confirm" onclick="confirmarSaida()">Sair</button>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
