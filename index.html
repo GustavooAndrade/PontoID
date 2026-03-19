@@ -3,83 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Ponto ID - controle de ponto Inteligente</title>
+    <link rel="stylesheet" href="./assets/css/inicio.css">
 </head>
 <body>
-    <div class="layout-principal">
-        <!--menu lateral-->
-        <div class="menu-lateral">
-            <div class="logotipo">
-                <span class="logo-texto">Ponto ID</span>
-            </div>
-            <div class="perfil-usuario">
-                <img src="https://placehold.co/40x40/4a8ff5/ffffff?text=G" alt="Foto de Perfil" class="foto-perfil">
-                <div class="info-usuario">
-                    <span class="nome-usuario">Olá, Gustavo</span>
-                    <span class="cargo-usuario">Administrador</span>
-                </div>
-                <a href="config.html" class="config-btn" aria-label="Configurações">
-                    <i class="fas fa-cog"></i>
-                </a>
-            </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li class="nav-item ativo"><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li> <!--item ativo-->
-                    <!--Links-->
-                    <li class="nav-item"><a href="./pages/ponto.html"><i class="fas fa-clock"></i> Bater Ponto</a></li>
-                    <li class="nav-item"><a href="./pages/meuponto.html"><i class="fas fa-file-alt"></i> Meu Ponto</a></li>
-                    <li class="nav-item"><a href="./pages/relatorio.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
-                    <li class="nav-item"><a href="./pages/config.html"><i class="fas fa-cog"></i> Configurações</a></li>
-                    <li class="nav-item logout"><a href="#" id="LinkSaida"><i class="fas fa-sign-out-alt"></i> Sair</a></li> <!--LinkSaida JS-->
-                </ul>
-            </nav>
-        </div>
-        
-        <!--Conteudo Principal-->
-        <div class="conteudo-principal">
-            <h1>Dashboard</h1>
+    
+<nav>
+  <div class="nav-logo">
+    <span class="dot"></span> Ponto ID
+  </div>
+  <div class="nav-actions">
+    <button class="btn-outline" href="./pages/login.html">Fazer Login</button>
+    <button class="btn-primary" href="./pages/cadastro.html">Cadastrar-se</button>
+  </div>
+</nav>
 
-            <!--Cards acesso rapido-->
-            <div class="dashboard-cards">
-                
-                <!--card verde(bater ponto)-->
-                <a href="./pages/ponto.html" class="card-link">
-                    <div class="card verde">
-                        <i class="fas fa-clock card-icon"></i>
-                        <p class="titulo-card">Bater Ponto</p>
-                    </div>
-                </a>
-
-                <!--card azul(meu ponto)-->
-                 <a href="./pages/meuponto.html" class="card-link">
-                    <div class="card azul">
-                        <i class="fas fa-file-alt card-icon"></i>
-                        <p class="titulo-card">Meu Ponto</p>
-                    </div>
-                </a>
-
-                <!--card laranja(relatorio)-->
-                <a href="./pages/relatorio.html" class="card-link">
-                    <div class="card laranja">
-                        <i class="fas fa-chart-bar card-icon"></i>
-                        <p class="titulo-card">Relatórios</p>
-                    </div>
-                </a>
-            </div>
-
-            <!--modal de saida-->
-    <div id="ModalSaida" class="modal">
-        <div class="modal-content-confirm">
-            <h3><i class="fas fa-exclamation-triangle"></i> Confirmar Saída</h3>
-            <p>Tem certeza de que deseja sair do sistema Ponto ID?</p>
-            <div class="modal-actions">
-                <button class="btn-cancel" onclick="fecharModalSaida()">Cancelar</button>
-                <button class="btn-confirm" onclick="confirmarSaida()">Sair</button>
-            </div>
-        </div>
+ <section class="principal">
+  <div class="principal-content">
+    <div class="texto-principal">
+      <span></span> Sistema de Controle de Ponto
     </div>
+    <h1>Gerencie sua<br>equipe com <span>precisão</span></h1>
+    <p class="hero-sub">
+      O Ponto ID é a solução completa para registro de ponto, acompanhamento de jornada e geração de relatórios — tudo em tempo real, de qualquer lugar.
+    </p>
+  </div>
 
-        <script src="./assets/js/script.js"></script>
+  <section class="section" id="features">
+  <h3>Funcionalidades</h3>
+  <h2>Tudo que você precisa<br>em um só lugar</h2>
+  <p class="texto-section reveal">Desenvolvido para simplificar o controle de jornada de trabalho para empresas de todos os tamanhos.</p>
+ 
+  <div class="features-grid">
+    <div class="feature-card green reveal">
+      <div class="feature-icon">⏰</div>
+      <h3>Bater Ponto</h3>
+      <p>Registro de entrada e saída com um clique. Suporte a múltiplos pontos diários — entrada, almoço, retorno e saída.</p>
+    </div>
+    <div class="feature-card blue reveal">
+      <div class="feature-icon">📋</div>
+      <h3>Meu Ponto</h3>
+      <p>Visualize seu histórico de registros, horas trabalhadas por dia, semana ou mês. Tudo organizado e acessível.</p>
+    </div>
+    <div class="feature-card orange reveal">
+      <div class="feature-icon">📊</div>
+      <h3>Relatórios</h3>
+      <p>Gere relatórios detalhados em PDF ou Excel. Analise horas extras, faltas e banco de horas de toda a equipe.</p>
+    </div>
+    <div class="feature-card navy reveal">
+      <div class="feature-icon">⚙️</div>
+      <h3>Configurações</h3>
+      <p>Personalize cargos, jornadas de trabalho, feriados e tolerâncias. O sistema se adapta às regras da sua empresa.</p>
+    </div>
+  </div>
+</section>
+
 </body>
+</html>
