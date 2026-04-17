@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
             <div class="perfil-usuario">
                 <img src="https://placehold.co/40x40/4a8ff5/ffffff?text=G" alt="Foto de Perfil" class="foto-perfil">
                 <div class="info-usuario">
-                    <span class="nome-usuario">Olá, Gustavo</span>
+                    <span class="nome-usuario">Olá, <?php $nome ?></span>
                     <span class="cargo-usuario">Administrador</span>
                 </div>
                 <a href="config.html" class="config-btn" aria-label="Configurações">
@@ -26,12 +26,12 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li class="nav-item ativo"><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li> <!--item ativo-->
+                    <li class="nav-item ativo"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li> <!--item ativo-->
                     <!--Links-->
-                    <li class="nav-item"><a href="./pages/ponto.html"><i class="fas fa-clock"></i> Bater Ponto</a></li>
-                    <li class="nav-item"><a href="./pages/meuponto.html"><i class="fas fa-file-alt"></i> Meu Ponto</a></li>
-                    <li class="nav-item"><a href="./pages/relatorio.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
-                    <li class="nav-item"><a href="./pages/config.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li class="nav-item"><a href="../pages/ponto.html"><i class="fas fa-clock"></i> Bater Ponto</a></li>
+                    <li class="nav-item"><a href="../pages/meuponto.html"><i class="fas fa-file-alt"></i> Meu Ponto</a></li>
+                    <li class="nav-item"><a href="../pages/relatorio.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+                    <li class="nav-item"><a href="../pages/config.html"><i class="fas fa-cog"></i> Configurações</a></li>
                     <li class="nav-item logout"><a href="#" id="LinkSaida"><i class="fas fa-sign-out-alt"></i> Sair</a></li> <!--LinkSaida JS-->
                 </ul>
             </nav>

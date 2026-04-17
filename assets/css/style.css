@@ -19,7 +19,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .login-form h2 {
@@ -41,7 +41,8 @@ body {
 
 .entrada-dados input[type="text"],
 .entrada-dados input[type="email"],
-.entrada-dados input[type="password"] {
+.entrada-dados input[type="password"],
+.entrada-dados input[type="date"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
