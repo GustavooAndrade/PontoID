@@ -16,16 +16,12 @@ if ($senha1 !== $senha2) {
 
 $senha_hash = password_hash($senha1, PASSWORD_DEFAULT);
 
-// 1. Inserir na tbUsuarios
-// O campo atualizado_por fica NULL no primeiro cadastro (auto-relacionamento)
 $sql_user = "INSERT INTO tbUsuarios (nome, login, senha) VALUES ('$nome', '$email', '$senha_hash')";
 
 if (mysqli_query($conn, $sql_user)) {
     // 2. Pegar o ID que o banco acabou de gerar para este usuário
     $id_usuario_gerado = mysqli_insert_id($conn);
 
-    // 3. Inserir na tbPessoas vinculando ao usuário (FK atualizado_por também como NULL aqui)
-    // Nota: Defini pessoa_tipo_id como 1 (ajuste conforme sua tabela tbPessoaTipo)
     $sql_pessoa = "INSERT INTO tbPessoas (nome, cpf, nascimento, telefone, atualizado_por) 
                    VALUES ('$nome', '$cpf', '$nascimento', '$telefone', NULL)";
 
